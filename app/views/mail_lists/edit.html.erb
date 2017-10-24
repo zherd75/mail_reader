@@ -1,0 +1,7 @@
+<h1>Editing Mail List</h1>
+
+<%= form_for edit_login_mail_list_path(id: @mail.id) do %>
+<%= text_area_tag(:message, @mail.message, size: "160x30") %>
+<%end%>
+
+<%= link_to 'Back', login_mail_lists_path %>

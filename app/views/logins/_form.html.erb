@@ -1,0 +1,16 @@
+<%= form_with(model: login, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :user %>
+    <%= form.text_field :user, id: :login_user %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :login_password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Login' %>
+  </div>
+<% end %>
+<p><%=flash.now[:alert]%></p>

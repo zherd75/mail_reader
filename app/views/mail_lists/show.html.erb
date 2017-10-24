@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @mail_list.subject %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @mail_list.message %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @mail_list.date %>
+</p>
+
+<%= link_to 'Edit', edit_mail_list_path(@mail_list) %> |
+<%= link_to 'Back', mail_lists_path %>

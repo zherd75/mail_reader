@@ -1,0 +1,5 @@
+development: &default
+  server: 'pop.gmail.com'
+  type: 'pop3'
+  port: 110
+  ssl: false

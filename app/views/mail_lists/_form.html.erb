@@ -1,0 +1,32 @@
+<%= form_with(model: mail_list, local: true) do |form| %>
+  <% if mail_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mail_list.errors.count, "error") %> prohibited this mail_list from being saved:</h2>
+
+      <ul>
+      <% mail_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :subject %>
+    <%= form.text_field :subject, id: :mail_list_subject %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_area :message, id: :mail_list_message %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :mail_list_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

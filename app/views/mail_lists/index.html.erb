@@ -1,0 +1,26 @@
+<p><%= link_to 'Выход', logout_url %></p>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'From', login_mail_lists_url(order: 'from_addr') %></th>
+      <th><%= link_to 'Subject', login_mail_lists_url(order: 'subject') %></th>
+      <th><%= link_to 'Date', login_mail_lists_url(order: 'date') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mail_lists.each do |mail| %>
+      <tr>
+      <%= form_for login_mail_list_path(id: mail.id) do %>
+         <td><%= text_field_tag :from_addr, mail.from_addr, style: 'min-width: 32em' %></td>
+         <td><%= text_field_tag :subject, mail.subject, style: 'min-width: 50em' %></td>
+         <td><%= text_field_tag :date, mail.date %></td>
+         <td><%= link_to 'Edit', edit_login_mail_list_path(id: mail.id) %></td>
+      <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
